@@ -1,0 +1,10 @@
+{
+  "name": "jfps-components",
+  "version": "1.0.0",
+  "description": "blablablablablablablabla",
+  "scripts": {
+    "build": "npm run clean && npm run compile"
+  },
+  "author": "",
+  "license": "ISC"
+}

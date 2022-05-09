@@ -1,0 +1,79 @@
+{
+  "sourceRoot": "apps/dots-cra/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/dots-cra",
+        "index": "apps/dots-cra/src/index.html",
+        "baseHref": "/",
+        "main": "apps/dots-cra/src/main.tsx",
+        "polyfills": "apps/dots-cra/src/polyfills.ts",
+        "tsConfig": "apps/dots-cra/tsconfig.app.json",
+        "assets": ["apps/dots-cra/src/favicon.ico", "apps/dots-cra/src/assets"],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/dots-cra/src/environments/environment.ts",
+              "with": "apps/dots-cra/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "dots-cra:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "dots-cra:build:development"
+        },
+        "production": {
+          "buildTarget": "dots-cra:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/dots-cra/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/dots-cra"],
+      "options": {
+        "jestConfig": "apps/dots-cra/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

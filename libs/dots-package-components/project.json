@@ -1,0 +1,24 @@
+{
+  "sourceRoot": "libs/dots-package-components/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/dots-package-components/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dots-package-components"],
+      "options": {
+        "jestConfig": "libs/dots-package-components/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

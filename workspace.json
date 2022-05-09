@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "projects": {
+    "dots-cra": "apps/dots-cra",
+    "dots-package-components": "libs/dots-package-components",
+    "next-js": "apps/next-js"
+  }
+}

@@ -1,8 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "design-system": "libs/design-system",
     "dots-cra": "apps/dots-cra",
     "dots-package-components": "libs/dots-package-components",
-    "next-js": "apps/next-js"
+    "next-js": "apps/next-js",
+    "rxjs-string": "libs/rxjs/string"
   }
 }
